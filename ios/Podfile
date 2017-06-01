@@ -2,12 +2,30 @@
 # platform :ios, '9.0'
 
 target 'Chat' do
+  platform :ios, '8.0'
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-  
+
   # Pods for Chat
+
+  react_native_path = "../node_modules/react-native"
+  pod "Yoga", :path => "#{react_native_path}/ReactCommon/yoga"
+
+  # Pods for ReactNativeFirebaseDemo
+  pod 'React', :path => '../node_modules/react-native'
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AppIndexing'
   pod 'Firebase/Core'
-  
+  pod 'Firebase/Crash'
+  pod 'Firebase/Database'
+  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
   target 'Chat-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
@@ -20,15 +38,3 @@ target 'Chat' do
 
 end
 
-target 'Chat-tvOS' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-
-  # Pods for Chat-tvOS
-
-  target 'Chat-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
